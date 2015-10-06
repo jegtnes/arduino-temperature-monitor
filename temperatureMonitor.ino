@@ -65,6 +65,20 @@ const int ninePin  = 9;
 
 void setup()
 {
+
+  pinMode(1, OUTPUT);
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(7, OUTPUT);
+  pinMode(8, OUTPUT);
+  pinMode(9, OUTPUT);
+  pinMode(11, OUTPUT);
+  pinMode(12, OUTPUT);
+  pinMode(13, OUTPUT);
+
   // In this sketch, we'll use the Arduino's serial port
   // to send text back to the main computer. For both sides to
   // communicate properly, they need to be set to the same speed.
