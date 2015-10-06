@@ -137,57 +137,82 @@ void loop()
   Serial.println(deg);
 
   // Split the temperature into ones and tens to use for setting appropriate LEDs:
-  int ones = (deg % 10 );
-  Serial.println(ones);
-  int tens = ((deg / 10) % 10);
-  Serial.println(tens);
+  int onesDeg = (deg % 10 );
+  int tensDeg = ((deg / 10) % 10);
   
-  if (deg >= 1) {
+  if (onesDeg >= 1) {
     digitalWrite(onePin, HIGH);
+  } else {
+    digitalWrite(onePin, LOW);
   }
-
-  if (deg >= 2) {
+  
+  if (onesDeg >= 2) {
     digitalWrite(twoPin, HIGH);
+  } else {
+    digitalWrite(twoPin, LOW);
   }
-
-  if (deg >= 3) {
+  
+  if (onesDeg >= 3) {
     digitalWrite(threePin, HIGH);
+  } else {
+    digitalWrite(threePin, LOW);
   }
-
-  if (deg >= 4) {
+  
+  if (onesDeg >= 4) {
     digitalWrite(fourPin, HIGH);
+  } else {
+    digitalWrite(fourPin, LOW);
   }
-
-  if (deg >= 5) {
+  
+  if (onesDeg >= 5) {
     digitalWrite(fivePin, HIGH);
+  } else {
+    digitalWrite(fivePin, LOW);
   }
-
-  if (deg >= 6) {
+  
+  if (onesDeg >= 6) {
     digitalWrite(sixPin, HIGH);
+  } else {
+    digitalWrite(sixPin, LOW);
   }
-
-  if (deg >= 7) {
+  
+  if (onesDeg >= 7) {
     digitalWrite(sevenPin, HIGH);
+  } else {
+    digitalWrite(sevenPin, LOW);
   }
-
-  if (deg >= 8) {
+  
+  if (onesDeg >= 8) {
     digitalWrite(eightPin, HIGH);
+  } else {
+    digitalWrite(eightPin, LOW);
+  }
+  
+  if (onesDeg >= 9) {
+    digitalWrite(ninePin, HIGH);
+  } else {
+    digitalWrite(ninePin, LOW);
   }
 
-  if (deg >= 9) {
-    digitalWrite(eightPin, HIGH);
-  }
-
-  if (deg > 9) {
+  if (tensDeg >= 1) {
     digitalWrite(teensPin, HIGH);
   }
-
-  if (deg > 19) {
-    digitalWrite(twentiesPin, HIGH);
+  else {
+    digitalWrite(teensPin, LOW);
   }
 
-  if (deg > 29) {
+  if (tensDeg >= 2) {
+    digitalWrite(twentiesPin, HIGH);
+  }
+  else {
+    digitalWrite(twentiesPin, LOW);
+  }
+
+  if (tensDeg >= 3) {
     digitalWrite(thirtiesPin, HIGH);
+  }
+  else {
+    digitalWrite(thirtiesPin, LOW);
   }
    
   delay(1000); // repeat once per second (change as you wish!)
