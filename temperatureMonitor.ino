@@ -48,6 +48,20 @@ Version 2.0 6/2012 MDG
 
 const int temperaturePin = 0;
 
+const int teensPin    = 11;
+const int twentiesPin = 12;
+const int thirtiesPin = 13;
+
+const int onePin   = 1;
+const int twoPin   = 2;
+const int threePin = 3;
+const int fourPin  = 4;
+const int fivePin  = 5;
+const int sixPin   = 6;
+const int sevenPin = 7;
+const int eightPin = 8;
+const int ninePin  = 9;
+
 
 void setup()
 {
