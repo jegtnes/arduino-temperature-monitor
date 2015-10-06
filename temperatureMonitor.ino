@@ -52,7 +52,7 @@ const int teensPin    = 11;
 const int twentiesPin = 12;
 const int thirtiesPin = 13;
 
-const int onePin   = 1;
+const int onePin   = 10; // When using serial we apparently can't use pin 0 and 1 ¯\_(ツ)_/¯
 const int twoPin   = 2;
 const int threePin = 3;
 const int fourPin  = 4;
@@ -66,18 +66,31 @@ const int ninePin  = 9;
 void setup()
 {
 
-  pinMode(1, OUTPUT);
-  pinMode(2, OUTPUT);
-  pinMode(3, OUTPUT);
-  pinMode(4, OUTPUT);
-  pinMode(5, OUTPUT);
-  pinMode(6, OUTPUT);
-  pinMode(7, OUTPUT);
-  pinMode(8, OUTPUT);
-  pinMode(9, OUTPUT);
-  pinMode(11, OUTPUT);
-  pinMode(12, OUTPUT);
-  pinMode(13, OUTPUT);
+  pinMode(onePin, OUTPUT);
+  pinMode(twoPin, OUTPUT);
+  pinMode(threePin, OUTPUT);
+  pinMode(fourPin, OUTPUT);
+  pinMode(fivePin, OUTPUT);
+  pinMode(sixPin, OUTPUT);
+  pinMode(sevenPin, OUTPUT);
+  pinMode(eightPin, OUTPUT);
+  pinMode(ninePin, OUTPUT);
+  pinMode(teensPin, OUTPUT);
+  pinMode(twentiesPin, OUTPUT);
+  pinMode(thirtiesPin, OUTPUT);
+
+  digitalWrite(onePin, LOW);
+  digitalWrite(twoPin, LOW);
+  digitalWrite(threePin, LOW);
+  digitalWrite(fourPin, LOW);
+  digitalWrite(fivePin, LOW);
+  digitalWrite(sixPin, LOW);
+  digitalWrite(sevenPin, LOW);
+  digitalWrite(eightPin, LOW);
+  digitalWrite(ninePin, LOW);
+  digitalWrite(teensPin, LOW);
+  digitalWrite(twentiesPin, LOW);
+  digitalWrite(thirtiesPin, LOW);
 
   // In this sketch, we'll use the Arduino's serial port
   // to send text back to the main computer. For both sides to
@@ -95,6 +108,7 @@ void setup()
 
 void loop()
 {
+  
   // Up to now we've only used integer ("int") values in our
   // sketches. Integers are always whole numbers (0, 1, 23, etc.).
   // In this sketch, we'll use floating-point values ("float").
@@ -195,7 +209,6 @@ float getVoltage(int pin)
   // all the math we need to do within this statement:
   
   return (analogRead(pin) * 0.004882814);
-  
   // This equation converts the 0 to 1023 value that analogRead()
   // returns, into a 0.0 to 5.0 value that is the true voltage
   // being read at that pin.
