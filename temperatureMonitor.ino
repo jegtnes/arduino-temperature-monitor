@@ -108,16 +108,11 @@ void setup()
 
 void loop()
 {
-  
-  // Up to now we've only used integer ("int") values in our
-  // sketches. Integers are always whole numbers (0, 1, 23, etc.).
-  // In this sketch, we'll use floating-point values ("float").
-  // Floats can be fractional numbers such as 1.42, 2523.43121, etc.
 
   // We'll declare three floating-point variables
   // (We can declare multiple variables of the same type on one line:)
 
-  float voltage, degreesC, degreesF;
+  float voltage, deg;
 
   // First we'll measure the voltage at the analog pin. Normally
   // we'd use analogRead(), which returns a number from 0 to 1023.
@@ -130,43 +125,16 @@ void loop()
   // Now we'll convert the voltage to degrees Celsius.
   // This formula comes from the temperature sensor datasheet:
 
-  degreesC = (voltage - 0.5) * 100.0;
-  
-  // While we're at it, let's convert degrees Celsius to Fahrenheit.
-  // This is the classic C to F conversion formula:
-  
-  degreesF = degreesC * (9.0/5.0) + 32.0;
+  deg = (voltage - 0.5) * 100.0;
   
   // Now we'll use the serial port to print these values
   // to the serial monitor!
-  
-  // To open the serial monitor window, upload your code,
-  // then click the "magnifying glass" button at the right edge
-  // of the Arduino IDE toolbar. The serial monitor window
-  // will open.
-
-  // (NOTE: remember we said that the communication speed
-  // must be the same on both sides. Ensure that the baud rate
-  // control at the bottom of the window is set to 9600. If it
-  // isn't, change it to 9600.)
-  
-  // Also note that every time you upload a new sketch to the
-  // Arduino, the serial monitor window will close. It does this
-  // because the serial port is also used to upload code!
-  // When the upload is complete, you can re-open the serial
-  // monitor window.
-  
-  // To send data from the Arduino to the serial monitor window,
-  // we use the Serial.print() function. You can print variables
-  // or text (within quotes).
 
   Serial.print("voltage: ");
   Serial.print(voltage);
   Serial.print("  deg C: ");
-  Serial.print(degreesC);
-  Serial.print("  deg F: ");
-  Serial.println(degreesF);
-
+  Serial.println(deg);
+ 
   // These statements will print lines of data like this:
   // "voltage: 0.73 deg C: 22.75 deg F: 72.96"
 
