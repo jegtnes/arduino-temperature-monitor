@@ -112,7 +112,8 @@ void loop()
   // We'll declare three floating-point variables
   // (We can declare multiple variables of the same type on one line:)
 
-  float voltage, deg;
+  float voltage;
+  int deg;
 
   // First we'll measure the voltage at the analog pin. Normally
   // we'd use analogRead(), which returns a number from 0 to 1023.
@@ -134,9 +135,48 @@ void loop()
   Serial.print(voltage);
   Serial.print("  deg C: ");
   Serial.println(deg);
- 
-  // These statements will print lines of data like this:
-  // "voltage: 0.73 deg C: 22.75 deg F: 72.96"
+
+  // Split the temperature into ones and tens to use for setting appropriate LEDs:
+  int ones = (deg % 10 );
+  Serial.println(ones);
+  int tens = ((deg / 10) % 10);
+  Serial.println(tens);
+  
+  if (deg >= 1) {
+    digitalWrite(onePin, HIGH);
+  }
+
+  if (deg >= 2) {
+    digitalWrite(twoPin, HIGH);
+  }
+
+  if (deg >= 3) {
+    digitalWrite(threePin, HIGH);
+  }
+
+  if (deg >= 4) {
+    digitalWrite(fourPin, HIGH);
+  }
+
+  if (deg >= 5) {
+    digitalWrite(fivePin, HIGH);
+  }
+
+  if (deg >= 6) {
+    digitalWrite(sixPin, HIGH);
+  }
+
+  if (deg >= 7) {
+    digitalWrite(sevenPin, HIGH);
+  }
+
+  if (deg >= 8) {
+    digitalWrite(eightPin, HIGH);
+  }
+
+  if (deg >= 9) {
+    digitalWrite(eightPin, HIGH);
+  }
 
   if (deg > 9) {
     digitalWrite(teensPin, HIGH);
