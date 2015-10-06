@@ -138,12 +138,17 @@ void loop()
   // These statements will print lines of data like this:
   // "voltage: 0.73 deg C: 22.75 deg F: 72.96"
 
-  // Note that all of the above statements are "print", except
-  // for the last one, which is "println". "Print" will output
-  // text to the SAME LINE, similar to building a sentence
-  // out of words. "Println" will insert a "carriage return"
-  // character at the end of whatever it prints, moving down
-  // to the NEXT line.
+  if (deg > 9) {
+    digitalWrite(teensPin, HIGH);
+  }
+
+  if (deg > 19) {
+    digitalWrite(twentiesPin, HIGH);
+  }
+
+  if (deg > 29) {
+    digitalWrite(thirtiesPin, HIGH);
+  }
    
   delay(1000); // repeat once per second (change as you wish!)
 }
